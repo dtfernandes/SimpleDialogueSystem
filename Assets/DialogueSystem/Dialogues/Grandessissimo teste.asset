@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba3f72017ded4643bce7c1639f7a5f4, type: 3}
+  m_Name: Grandessissimo teste
+  m_EditorClassIdentifier: 
+  DialogueName: Grandessissimo teste
+  dialogueNodes:
+  - guid: d0e75db1-2c73-4604-ad6c-75b443f9c85a
+    dialogue: "Isto \xE9 um teste ainda maior"
+    position:
+      serializedVersion: 2
+      x: 232.8
+      y: 161.59999
+      width: 247.2
+      height: 118.399994
+    isStart: 1
+    events:
+    - gameObj: {fileID: 0}
+      uniqueID: 1d9a2514-e609-4313-a289-5e733827a78f
+      functionName: Function
+      indexPos: 13
+      showText: 0
+      showSelf: 0
+      listOfType:
+      - UnityEngine.Transform
+      - TesteFunctionDeployer
+      - DialogueUniqueId
+      - TesteFunction2
+      listOfAssemblies:
+      - UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      seletedTypeIndex: 1
+      seletedMethodIndex: 0
+    - gameObj: {fileID: 0}
+      uniqueID: 1d9a2514-e609-4313-a289-5e733827a78f
+      functionName: Wowser
+      indexPos: 25
+      showText: 0
+      showSelf: 0
+      listOfType:
+      - UnityEngine.Transform
+      - TesteFunctionDeployer
+      - DialogueUniqueId
+      - TesteFunction2
+      listOfAssemblies:
+      - UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      seletedTypeIndex: 1
+      seletedMethodIndex: 1
+    outPorts:
+    - choiceText: 
+      id: 3d9ead29-fb99-4273-9bbe-a718c425f0c4
+  - guid: 3d9ead29-fb99-4273-9bbe-a718c425f0c4
+    dialogue: Um grandessicimo teste
+    position:
+      serializedVersion: 2
+      x: 496.8
+      y: 130.4
+      width: 247.20001
+      height: 119.2
+    isStart: 0
+    events:
+    - gameObj: {fileID: 0}
+      uniqueID: 416224ab-7643-42f6-a0ce-f38b75e40825
+      functionName: StartDialolgue
+      indexPos: 11
+      showText: 1
+      showSelf: 1
+      listOfType:
+      - UnityEngine.RectTransform
+      - UnityEngine.CanvasRenderer
+      - DialogueDisplayHandler
+      - DialogueUniqueId
+      listOfAssemblies:
+      - UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      seletedTypeIndex: 2
+      seletedMethodIndex: 0
+    outPorts:
+    - choiceText: 
+      id: d0e75db1-2c73-4604-ad6c-75b443f9c85a

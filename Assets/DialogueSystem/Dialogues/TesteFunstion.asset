@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba3f72017ded4643bce7c1639f7a5f4, type: 3}
+  m_Name: TesteFunstion
+  m_EditorClassIdentifier: 
+  DialogueName: TesteFunstion
+  dialogueNodes:
+  - guid: 6d88b6ba-6821-4204-bacf-320dd8a1a140
+    dialogue: "Isto \xE9 um grande teste"
+    position:
+      serializedVersion: 2
+      x: 264
+      y: 208
+      width: 217.6
+      height: 98.40001
+    isStart: 1
+    outPorts: []

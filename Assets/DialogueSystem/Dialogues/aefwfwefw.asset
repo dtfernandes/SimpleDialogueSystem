@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba3f72017ded4643bce7c1639f7a5f4, type: 3}
+  m_Name: aefwfwefw
+  m_EditorClassIdentifier: 
+  DialogueName: aefwfwefw
+  dialogueNodes:
+  - guid: 0803a657-5eb8-4322-82fb-a5e1e9396e93
+    dialogue: dafs
+    position:
+      serializedVersion: 2
+      x: 290.4
+      y: 154.4
+      width: 217.6
+      height: 119.2
+    isStart: 1
+    events:
+    - gameObj: {fileID: 0}
+      uniqueID: 1d9a2514-e609-4313-a289-5e733827a78f
+      functionName: get_position
+      indexPos: 0
+      showText: 0
+      showSelf: 1
+      listOfType:
+      - UnityEngine.Transform
+      - TesteFunctionDeployer
+      - DialogueUniqueId
+      - TesteFunction2
+      listOfAssemblies:
+      - UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      seletedTypeIndex: 0
+      seletedMethodIndex: 0
+    outPorts: []

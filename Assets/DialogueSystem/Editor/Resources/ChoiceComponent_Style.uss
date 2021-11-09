@@ -1,0 +1,20 @@
+"choiceContainer" {
+	flex-direction: row;
+}
+
+"deleteButton" {
+	border-color: rgb(0,0,0);
+
+}
+
+TextField{
+	
+
+	min-width: 100px;
+	max-width: 400px;
+
+}
+
+Port{
+	margin-right: 10px; 
+}
