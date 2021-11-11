@@ -67,7 +67,6 @@ MonoBehaviour:
   currentScript: {fileID: 11400000, guid: 49869c133f86db344bb6cba996ceef6a, type: 2}
   displaySpeed: 0.035
   buttonLayout: {fileID: 2276409199139547662}
-  nameContainer: {fileID: 2276409200598561694}
   buttonPREFAB: {fileID: 5384297829809235215, guid: 21273f440f7a9b2439f983dab0d20978, type: 3}
   playOnLoad: 1
 --- !u!1 &2276409199139547662
@@ -445,6 +444,7 @@ GameObject:
   - component: {fileID: 2276409200598561695}
   - component: {fileID: 2276409200598561693}
   - component: {fileID: 2276409200598561694}
+  - component: {fileID: 3973426014172737544}
   m_Layer: 5
   m_Name: NameText
   m_TagString: Untagged
@@ -568,6 +568,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3973426014172737544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2276409200598561688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c44ef23cfaee88d49b566feb68f18ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ddHandler: {fileID: 2276409198961031040}
 --- !u!1001 &3143413785719351692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -581,7 +594,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3749466822717622042, guid: fe44f577b2caa7b4eb1c6de3b8ca1e07, type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 193.73
       objectReference: {fileID: 0}
     - target: {fileID: 3749466822717622042, guid: fe44f577b2caa7b4eb1c6de3b8ca1e07, type: 3}
       propertyPath: m_fontAsset
@@ -589,7 +602,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 3749466822717622042, guid: fe44f577b2caa7b4eb1c6de3b8ca1e07, type: 3}
       propertyPath: m_fontSizeMax
-      value: 72
+      value: 193.73
       objectReference: {fileID: 0}
     - target: {fileID: 3749466822717622043, guid: fe44f577b2caa7b4eb1c6de3b8ca1e07, type: 3}
       propertyPath: m_LocalPosition.x

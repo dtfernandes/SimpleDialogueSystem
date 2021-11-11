@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d441835963b81f54eb7ddd484fb18da4, type: 3}
   m_Name: EntityData
   m_EditorClassIdentifier: 
-  fuck: Fuck
+  randomUnusedString: I dont understand
   data:
   - entityName: "Jo\xE3o"
     entitySprite: {fileID: 0}

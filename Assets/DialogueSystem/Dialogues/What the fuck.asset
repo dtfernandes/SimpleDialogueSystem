@@ -19,14 +19,16 @@ MonoBehaviour:
     dialogue: Ent?
     position:
       serializedVersion: 2
-      x: 261.6
-      y: 107.2
+      x: 249.6
+      y: 51.2
       width: 247.19998
-      height: 119.2
+      height: 142.4
     isStart: 1
     events: []
     outPorts:
-    - choiceText: 
+    - choiceText: sim
+      id: 82fb7ae6-eeaf-4d61-bdba-c945243b5291
+    - choiceText: nao
       id: 82fb7ae6-eeaf-4d61-bdba-c945243b5291
   - presetName: Andre
     guid: 82fb7ae6-eeaf-4d61-bdba-c945243b5291

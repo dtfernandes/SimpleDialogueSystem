@@ -45,12 +45,6 @@ public class DialogueDisplayHandler : MonoBehaviour
     private GameObject buttonLayout = default;
 
     /// <summary>
-    /// GameObject that defines the container of the Name
-    /// </summary>
-    [SerializeField]
-    private TextMeshProUGUI nameContainer = default;
-
-    /// <summary>
     /// Prefab of the ChoiceButton
     /// </summary>
     [SerializeField]
@@ -61,12 +55,6 @@ public class DialogueDisplayHandler : MonoBehaviour
     /// Variable that defines the data of one line of dialogue
     /// </summary>
     private NodeData dialogueLine;
-
-
-    /// <summary>
-    /// ID component of the current line of dialogue
-    /// </summary>
-    private string currentGUID;
 
 
     /// <summary>
@@ -98,7 +86,8 @@ public class DialogueDisplayHandler : MonoBehaviour
     [SerializeField]
     private bool playOnLoad = default;
 
-    
+    public System.Action<DialogueScript> onStartDialogue;
+    public System.Action<NodeData> onStartLine;
     public System.Action onEndDialogue;
   
     private void Start()
@@ -145,6 +134,7 @@ public class DialogueDisplayHandler : MonoBehaviour
     public void StartDialolgue(DialogueScript script)
     {
         currentScript = script;
+        onStartDialogue?.Invoke(currentScript);
         PrepareNewDialogue();
     }
 
@@ -160,7 +150,6 @@ public class DialogueDisplayHandler : MonoBehaviour
         //Initialize First Line
         dialogueLine = currentScript[0];
         dialogueText = currentScript[0].Dialogue;
-        currentGUID = currentScript[0].GUID;
 
         //Handle button Layout
         InstatiateChoices();
@@ -240,16 +229,7 @@ public class DialogueDisplayHandler : MonoBehaviour
     /// </summary>
     private void DisplayLine()
     {
-        if(dialogueLine.PresetName == "Default")
-        {
-            nameContainer.gameObject.SetActive(false);
-        }
-        else
-        {
-            nameContainer.gameObject.SetActive(true);
-        }
-
-        nameContainer.text = dialogueLine.PresetName;
+        onStartLine?.Invoke(dialogueLine);
         StopCoroutine("TypeWriterEffect");
         StartCoroutine("TypeWriterEffect");
     }

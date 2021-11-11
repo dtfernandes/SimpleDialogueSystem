@@ -14,12 +14,15 @@ namespace DialogueSystem
     //Day 33
     //I think I fixed it for good. I used a wierd unity method in another class that doesn't do what the name says it does.
     //I guess it is expected from unity. I still don't get how this got broken so hard. 
-    //Whatever I'm going to accept that at least it works... for now.
+    //Whatever, I'm going to accept that at least it works... for now.
     // Warning: Never use Resources.FindObjectsOfTypeAll, it doesnt find all objects of a certain type inside resources.
-    //This fuction is like a mimic from dark souls, it looks like something good but only brings pain and sufering with it.
     
     //Day 34 
     //It stopped working again.
+
+    //Day 35 
+    // I don't get it... The random unused string is the thing that fixes the bug...
+    // What
     public class EntityData : ScriptableObject
     {
         public List<string> presetNames => CreateNamesList();
@@ -33,8 +36,9 @@ namespace DialogueSystem
             return returnList;
         }
 
+        //Don't Delete. I don't know why but this is the thing keeping everything working
         [SerializeField]
-        private string fuck;
+        private string randomUnusedString;
 
         [SerializeField]
         public List<EntityInfo> data;

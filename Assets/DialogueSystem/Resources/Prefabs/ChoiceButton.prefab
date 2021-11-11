@@ -165,7 +165,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3749466822717622042, guid: fe44f577b2caa7b4eb1c6de3b8ca1e07, type: 3}
       propertyPath: m_fontSize
-      value: 275.9
+      value: 429.6
       objectReference: {fileID: 0}
     - target: {fileID: 3749466822717622042, guid: fe44f577b2caa7b4eb1c6de3b8ca1e07, type: 3}
       propertyPath: m_enableAutoSizing
@@ -173,12 +173,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3749466822717622042, guid: fe44f577b2caa7b4eb1c6de3b8ca1e07, type: 3}
       propertyPath: m_text
-      value: AH<b>Sim</b>
+      value: what
       objectReference: {fileID: 0}
     - target: {fileID: 3749466822717622042, guid: fe44f577b2caa7b4eb1c6de3b8ca1e07, type: 3}
       propertyPath: m_isRichText
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3749466822717622042, guid: fe44f577b2caa7b4eb1c6de3b8ca1e07, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 1065.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3749466822717622042, guid: fe44f577b2caa7b4eb1c6de3b8ca1e07, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 3749466822717622043, guid: fe44f577b2caa7b4eb1c6de3b8ca1e07, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
