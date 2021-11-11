@@ -18,10 +18,10 @@ namespace DialogueSystem.Editor
         [HideInInspector]
         public List<EventTriggerData> events;
 
-        [SerializeField]
+        //[SerializeField]
         private EntityInfo entityInfo;
 
-        private string presetEntity;
+        private string presetEntityName;
 
         public void init(DialogueNode dn)
         {
@@ -29,12 +29,16 @@ namespace DialogueSystem.Editor
             isStart = dn.EntryPoint;
             dialogueText = dn.DialogText;
             events = node.Events;
-            presetEntity = dn.entityName;
+            presetEntityName = dn.PresetName;
+
+            EntityData data = Resources.Load<EntityData>("EntityData");
+            entityInfo = data[presetEntityName];
+
         }
 
         public void ChangeDialogue(string newDialogue, bool fromTxt = false)
         {
-            Debug.Log(presetEntity); 
+
             if (!fromTxt)
             {
                 node.textfield.value = newDialogue;

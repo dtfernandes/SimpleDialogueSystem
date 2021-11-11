@@ -14,7 +14,7 @@ namespace DialogueSystem.Editor
     public class DialogueNode : DefaultNode
     {
 
-        public string entityName;
+        public string PresetName { get; set; }
 
         public TextField textfield;
        
@@ -69,28 +69,46 @@ namespace DialogueSystem.Editor
                 text.value = $"{nd?.Dialogue}";
 
             mainContainer.Insert(1, text);
-
-
+       
+            #region Entity Preset PopUp
+            //Load Entities and their presets 
+            EntityData data = Resources.Load<EntityData>("EntityData");
+            List<string> names = data.presetNames;
             
+            //Get the selected preset
+            int firstSelected = 0;
+            if(nd != null) 
+                firstSelected = names.IndexOf(nd.PresetName);
+
+            try
+            {
+                PopupField<string> justfortest = new PopupField<string>(names, firstSelected);
+            }
+            catch 
+            {
+                firstSelected = 0;
+                Debug.LogWarning("Dude... The preset list disapeared somehow again");
+            }
+
+            PopupField<string> presetPopUp = new PopupField<string>(names, firstSelected);
+
+            PresetName = nd == null ? presetPopUp.value : nd.PresetName;
+
+            presetPopUp.RegisterCallback<ChangeEvent<string>>((ChangeEvent<string> evt) =>
+            {
+                PresetName = presetPopUp.value;
+                EnableInspectorDisplay();
+            });
+            extensionContainer.Add(presetPopUp);
+
+            #endregion
+
+
             RegisterCallback<PointerDownEvent>((PointerDownEvent evt) =>
             {
                 EnableInspectorDisplay();
             });
 
-
-            //Load Entities and their presets 
-            EntityData data = Resources.Load<EntityData>("EntityData");
-            List<string> names = data.presetNames; 
-            PopupField<string> test = new PopupField<string>(names,0);
-            test.RegisterCallback<ChangeEvent<string>>((ChangeEvent<string> evt) => 
-            {
-                entityName = test.value;
-            });
-            
-            
-           
-
-            extensionContainer.Add(test);
             RefreshExpandedState();
             //expanded = true;
         }

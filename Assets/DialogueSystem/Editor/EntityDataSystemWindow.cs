@@ -40,10 +40,9 @@ namespace DialogueSystem.Editor
             GUILayout.Space(20);
 
             scrollPosition = GUILayout.BeginScrollView(scrollPosition);
-            
+
             for (int i = 0; i < data.data.Count; i++)
             {
-                
                 EntityInfo info = data.data[i];
 
                 DrawUILine(new Color(0.1f, 0.1f, 0.1f, 1), 2);
@@ -86,14 +85,15 @@ namespace DialogueSystem.Editor
 
         private static EntityData GetEntityData()
         {
-            //AssetDatabase.DeleteAsset("Assets/DialogueSystem/Editor/Resources/EntityData.asset");
-            int numbOfData = Resources.FindObjectsOfTypeAll(typeof(EntityData)).Length;
+           
+            //AssetDatabase.DeleteAsset("Assets/DialogueSystem/Editor/Resources/EntityData.asset");           
+            EntityData[] foundObjects = Resources.LoadAll<EntityData>("");
 
-
-            bool dataExists = numbOfData > 0;
+            bool dataExists = foundObjects.Length > 0;
             
             if (!dataExists)
-            { 
+            {
+                Debug.Log("Curious");
                 EntityData asset = ScriptableObject.CreateInstance<EntityData>();
                 AssetDatabase.CreateAsset(asset,
                     "Assets/DialogueSystem/Editor/Resources/EntityData.asset");

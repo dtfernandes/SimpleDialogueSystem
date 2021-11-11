@@ -14,7 +14,7 @@ namespace DialogueSystem
         /// Name of the Dialogue
         /// </summary>
         [SerializeField]
-        public string DialogueName;
+        public string DialogueName; 
 
         /// <summary>
         /// Unique Id of the Dialogue
@@ -29,11 +29,13 @@ namespace DialogueSystem
         private List<NodeData> dialogueNodes =
             new List<NodeData>();
 
+      
+
         /// <summary>
         /// Amount of Nodes in the Dialogue
         /// </summary>
         public int Count => dialogueNodes.Count;
-    
+
         /// <summary>
         /// Method responsible for adding a new NodeData to the
         /// DialogueScript
@@ -43,6 +45,7 @@ namespace DialogueSystem
         {
             dialogueNodes.Add(data);
         }
+
 
         /// <summary>
         /// Get the data by passing the guid
@@ -63,7 +66,6 @@ namespace DialogueSystem
             private set { }
         }
 
-
         /// <summary>
         /// Get the data be passing the index
         /// </summary>
@@ -77,6 +79,8 @@ namespace DialogueSystem
             }
             private set { }
         }
+
+
 
         /// <summary>
         /// Method responsible for getting the NodeData that follows 

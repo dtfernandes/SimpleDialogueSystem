@@ -25,7 +25,6 @@ namespace DialogueSystem.Editor
             if (dialogueName == null)
                 dialogueName = "InitialName";
 
-            //https://answers.unity.com/questions/437391/prompting-dialogue-box-for-input-in-editor.html
             string path =
                 EditorUtility.SaveFilePanelInProject("Save Your Dialogue",
                 dialogueName + ".asset", "asset",
@@ -75,7 +74,8 @@ namespace DialogueSystem.Editor
                     guID: nd.GUID,
                     dialogue: nd.DialogText,
                     outPorts: nd.OutPorts.Select(item => item.Clone()).ToList(),
-                    events: nd.Events
+                    events: nd.Events,
+                    presetNames: nd.PresetName
                     );
 
                 temp.FillDialogueDic(data);

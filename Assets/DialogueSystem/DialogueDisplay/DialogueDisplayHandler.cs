@@ -15,6 +15,8 @@ public class DialogueDisplayHandler : MonoBehaviour
     [SerializeField]
     private KeyCode passDialogueKey = default;
 
+    
+
     /// <summary>
     /// Text component responsible for displaying the Dialogue text
     /// </summary>
@@ -238,6 +240,16 @@ public class DialogueDisplayHandler : MonoBehaviour
     /// </summary>
     private void DisplayLine()
     {
+        if(dialogueLine.PresetName == "Default")
+        {
+            nameContainer.gameObject.SetActive(false);
+        }
+        else
+        {
+            nameContainer.gameObject.SetActive(true);
+        }
+
+        nameContainer.text = dialogueLine.PresetName;
         StopCoroutine("TypeWriterEffect");
         StartCoroutine("TypeWriterEffect");
     }

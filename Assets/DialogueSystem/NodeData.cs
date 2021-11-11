@@ -9,6 +9,8 @@ namespace DialogueSystem
     [System.Serializable]
     public class NodeData
     {
+        [SerializeField] [HideInInspector]
+        private string presetName;
 
         /// <summary>
         /// Unique id of this Node
@@ -16,13 +18,11 @@ namespace DialogueSystem
         [SerializeField] [HideInInspector]
         private string guid;
 
-
         /// <summary>
         /// Dialogue text of this Node
         /// </summary>
         [SerializeField]
         private string dialogue;
-
 
         /// <summary>
         /// The position on the GraphView of this Node
@@ -30,15 +30,13 @@ namespace DialogueSystem
         [SerializeField] [HideInInspector]
         private Rect position;
 
-
         /// <summary>
         /// Variable that defines if the Node is connected to the "Start" node
         /// </summary>
         [SerializeField] [HideInInspector]
         private bool isStart;
 
-
-        [SerializeField]
+        [SerializeField] [HideInInspector]
         private List<EventTriggerData> events;
         public List<EventTriggerData> Events {
             get
@@ -46,6 +44,14 @@ namespace DialogueSystem
                 return events;
             } 
         }
+
+        /// <summary>
+        /// List of Choice data connected to the ouput ports of the Node
+        /// </summary>
+        [SerializeField] [HideInInspector]
+        private List<ChoiceData> outPorts = new List<ChoiceData>();
+
+
 
         /// <summary>
         /// Property that defines the unique id of this Node
@@ -56,7 +62,6 @@ namespace DialogueSystem
             set { guid = value; }
         }
        
-
         /// <summary>
         /// Property that defines the Dialogue text of this Node
         /// </summary>
@@ -64,32 +69,25 @@ namespace DialogueSystem
         {
             get { return dialogue; }
             set { dialogue = value; }
-        }
-       
+        }     
 
         /// <summary>
         /// Property that defines the position of this Node on the GraphView
         /// </summary>
         public Rect Position => position;
         
-
         /// <summary>
         /// Property that defines if the Node is connected to the "Start" node
         /// </summary>
         public bool IsStart => isStart;
-
-
-        /// <summary>
-        /// List of Choice data connected to the ouput ports of the Node
-        /// </summary>
-        [SerializeField]
-        private List<ChoiceData> outPorts = new List<ChoiceData>();
 
         /// <summary>
         /// Property that defines the list of Choice data connected to
         /// the ouput ports of the Node
         /// </summary>
         public List<ChoiceData> OutPorts => outPorts;
+
+        public string PresetName { get => presetName; private set => presetName = value; }
 
 
         /// <summary>
@@ -102,7 +100,7 @@ namespace DialogueSystem
         /// to the "Start"</param>
         /// <param name="outPorts">List of Choice data connected to the node</param>
         public NodeData(string guID, string dialogue, Rect pos, bool start, ICollection<ChoiceData> outPorts, 
-            List<EventTriggerData> events)
+            List<EventTriggerData> events, string presetNames = "default")
         {
             isStart = start;
             position = pos;
@@ -110,6 +108,7 @@ namespace DialogueSystem
             Dialogue = dialogue;
             this.outPorts = outPorts as List<ChoiceData>;
             this.events = events;
+            PresetName = presetNames;
         }
     }
 }

@@ -14,13 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueName: TesteFunstion
   dialogueNodes:
-  - guid: 6d88b6ba-6821-4204-bacf-320dd8a1a140
-    dialogue: "Isto \xE9 um grande teste"
+  - guid: f94a7818-71c1-4c3b-aa7f-9fd084d4871c
+    dialogue: Bom dia
     position:
       serializedVersion: 2
-      x: 264
-      y: 208
+      x: 232
+      y: 126.399994
       width: 217.6
-      height: 98.40001
+      height: 118.40001
     isStart: 1
+    events: []
     outPorts: []
