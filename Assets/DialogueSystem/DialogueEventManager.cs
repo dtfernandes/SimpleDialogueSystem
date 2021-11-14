@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,28 +30,56 @@ namespace DialogueSystem
 
         private void Start()
         {
+            CleanData();
+        }
+
+        private static void CleanData()
+        {
+            foreach(GameObjectIdPar par in parList)
+            {
+                for (int i = par.Scripts.Count - 1; i >= 0; i--)
+                {
+                    if(par.Scripts[i] == null)
+                    {
+                        par.Scripts.RemoveAt(i);
+                    }
+                }
+
+                if (par.Scripts.Count == 0)
+                    parList.Remove(par);
+            }
+        }
+        public static void ClearTemp()
+        {
+            tempList.Clear();
+            CleanData();
         }
 
         private static List<GameObjectIdPar> parList;
-        [SerializeField]
         private static List<GameObjectIdPar> tempList;
 
         [System.Serializable]
         private struct GameObjectIdPar
         {
-            [SerializeField]
-            string id;
+            string nameOf => gameObject.name;
             [SerializeField]
             GameObject gameObject;
+            [SerializeField]
+            string id;           
+            [SerializeField]
+            List<DialogueScript> scripts;
+
 
             public GameObjectIdPar(string id, GameObject gameObject)
             {
+                scripts = new List<DialogueScript> { };
                 this.id = id;
                 this.gameObject = gameObject;
             }
 
             public GameObject GameObject { get => gameObject; private set => gameObject = value; }
             public string Id { get => id; private set => id = value; }
+            public List<DialogueScript> Scripts { get => scripts; set => scripts = value; }
         }
 
         public static string GetID(GameObject newGameObject)
@@ -67,7 +96,7 @@ namespace DialogueSystem
 
             return GetGameObjectID(newGameObject); 
         }
-
+        
 
 
         public static void AddNewGameObject(GameObject newGameObject, DialogueScript script)
@@ -75,13 +104,14 @@ namespace DialogueSystem
             GameObject obj = GetGameObject(newGameObject);
             if (obj != null)
             {
-                //DialogueUniqueId uniqueId = obj.GetComponent<DialogueUniqueId>();
-                //uniqueId.UsedIn.Add(script);
+                //Already existing GameObject
+                GetPar(newGameObject).Scripts.Add(script);
             }
             else
             {
-                //DialogueUniqueId uniqueId = newGameObject.AddComponent<DialogueUniqueId>();
+                //New GameObject
                 GameObjectIdPar par = GetTempPar(newGameObject);
+                par.Scripts.Add(script);
                 parList.Add(par);
             }
         }
@@ -89,12 +119,23 @@ namespace DialogueSystem
         public static void RemoveGameObject(GameObject newGameObject, DialogueScript script)
         {
             GameObject obj = GetGameObject(newGameObject);
+            
             if (obj == null) return;
-            DialogueUniqueId uniqueId = obj.GetComponent<DialogueUniqueId>();
-            uniqueId.UsedIn.Remove(script);
-            if (uniqueId.TimesUsed == 0)
-                Destroy(uniqueId); 
+            int index = parList.IndexOf(GetPar(obj));
+
+         
+            GameObjectIdPar newPar = parList[index];
+            Debug.Log(newPar.Scripts.Contains(script));
+            newPar.Scripts.Remove(script);
+            parList[index] = newPar;
+
+            //DialogueUniqueId uniqueId = obj.GetComponent<DialogueUniqueId>();
+            //uniqueId.UsedIn.Remove(script);
+            //if (uniqueId.TimesUsed == 0)
+            //    Destroy(uniqueId); 
         }
+
+
 
         public static GameObject GetGameObject(string id)
         {
@@ -131,12 +172,12 @@ namespace DialogueSystem
         
         private static string GetGameObjectID(GameObject gameObject)
         {
-            return GetPar(gameObject).GetValueOrDefault().Id;
+            return GetPar(gameObject).Id;
         }
         
 
 
-        private static GameObjectIdPar? GetPar(GameObject gameObject)
+        private static GameObjectIdPar GetPar(GameObject gameObject)
         {
             foreach (GameObjectIdPar gp in parList)
             {
@@ -144,7 +185,7 @@ namespace DialogueSystem
                     return gp;
             }
 
-            return null;
+            return default;
         }
 
         private static GameObjectIdPar GetTempPar(GameObject gameObject)

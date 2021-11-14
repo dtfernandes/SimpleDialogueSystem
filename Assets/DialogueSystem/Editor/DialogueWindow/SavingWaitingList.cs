@@ -21,8 +21,9 @@ namespace DialogueSystem.Editor
 
         internal void Save(DialogueScript script)
         {
+
             foreach (GameObject g in waitListToAdd)
-            {
+            {           
                 DialogueEventManager.AddNewGameObject(g, script);
             }
 
@@ -30,6 +31,13 @@ namespace DialogueSystem.Editor
             {
                 DialogueEventManager.RemoveGameObject(g, script);
             }
+
+            waitListToAdd.Clear();
+            waitListToDelete.Clear();
+
+         
+
+            DialogueEventManager.ClearTemp();            
         }
     }
 }

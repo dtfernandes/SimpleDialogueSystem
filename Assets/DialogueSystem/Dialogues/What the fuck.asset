@@ -19,28 +19,28 @@ MonoBehaviour:
     dialogue: Ent?
     position:
       serializedVersion: 2
-      x: 200
-      y: 72
+      x: 204
+      y: 73.600006
       width: 247.20001
-      height: 143.2
+      height: 143.20001
     isStart: 1
     events:
     - gameObj: {fileID: 0}
-      uniqueID: 4a30ed88-b1b6-400d-a7fc-b129f69e9e47
-      functionName: Test
-      indexPos: 3
-      showText: 1
+      uniqueID: 83647711-6a1f-4d84-bc1d-d75466ad0401
+      savedID: 83647711-6a1f-4d84-bc1d-d75466ad0401
+      functionName: add_reapplyDrivenProperties
+      indexPos: 0
+      showText: 0
       showSelf: 1
       listOfType:
-      - UnityEngine.Transform
-      - UnityEngine.EventSystems.EventSystem
-      - UnityEngine.EventSystems.StandaloneInputModule
-      - DialogueSystem.DialogueEventManager
-      - FuncTest
+      - UnityEngine.RectTransform
+      - UnityEngine.CanvasRenderer
+      - DialogueDisplayHandler
       listOfAssemblies:
       - UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       - UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-      - UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
       - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -53,78 +53,70 @@ MonoBehaviour:
       - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      seletedTypeIndex: 4
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      seletedTypeIndex: 0
+      seletedMethodIndex: 0
+    - gameObj: {fileID: 0}
+      uniqueID: 83647711-6a1f-4d84-bc1d-d75466ad0401
+      savedID: 83647711-6a1f-4d84-bc1d-d75466ad0401
+      functionName: add_reapplyDrivenProperties
+      indexPos: 0
+      showText: 0
+      showSelf: 1
+      listOfType:
+      - UnityEngine.RectTransform
+      - UnityEngine.CanvasRenderer
+      - DialogueDisplayHandler
+      listOfAssemblies:
+      - UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      seletedTypeIndex: 0
       seletedMethodIndex: 0
     outPorts:
     - choiceText: sim
       id: 82fb7ae6-eeaf-4d61-bdba-c945243b5291
     - choiceText: nao
       id: 82fb7ae6-eeaf-4d61-bdba-c945243b5291
-  - presetName: "Jo\xE3o"
-    guid: 26cec46b-7136-4a07-bbf0-0d9f6f2be5e5
-    dialogue: Cala-te tu caralho
-    position:
-      serializedVersion: 2
-      x: 825.6
-      y: 77.600006
-      width: 247.20007
-      height: 119.200005
-    isStart: 0
-    events: []
-    outPorts:
-    - choiceText: 
-      id: 12772288-14c1-4301-afd4-7aadb65dd125
   - presetName: Andre
     guid: 82fb7ae6-eeaf-4d61-bdba-c945243b5291
     dialogue: "Cala-te Mas \xE9 "
     position:
       serializedVersion: 2
-      x: 488.8
-      y: 79.2
-      width: 247.20001
-      height: 119.2
-    isStart: 0
-    events: []
-    outPorts:
-    - choiceText: 
-      id: 26cec46b-7136-4a07-bbf0-0d9f6f2be5e5
-  - presetName: "Jo\xE3o"
-    guid: 879865f7-ef09-4b69-ac02-6fb5dec1d877
-    dialogue: fuck u
-    position:
-      serializedVersion: 2
-      x: 888
-      y: 230.4
-      width: 247.19995
-      height: 119.2
-    isStart: 0
-    events: []
-    outPorts:
-    - choiceText: 
-      id: df54ad5c-4eae-4544-acb2-48c4ed6a7a92
-  - presetName: Default
-    guid: df54ad5c-4eae-4544-acb2-48c4ed6a7a92
-    dialogue: Eles morrem
-    position:
-      serializedVersion: 2
-      x: 1145.6
-      y: 352.80002
-      width: 217.59998
-      height: 119.19998
+      x: 513.6
+      y: 84.8
+      width: 217.60004
+      height: 119.200005
     isStart: 0
     events: []
     outPorts: []
-  - presetName: Andre
-    guid: 12772288-14c1-4301-afd4-7aadb65dd125
-    dialogue: Queres Levar
-    position:
-      serializedVersion: 2
-      x: 532
-      y: 239.99998
-      width: 247.20001
-      height: 119.20001
-    isStart: 0
-    events: []
-    outPorts:
-    - choiceText: 
-      id: 879865f7-ef09-4b69-ac02-6fb5dec1d877

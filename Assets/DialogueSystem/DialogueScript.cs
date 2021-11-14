@@ -8,7 +8,7 @@ namespace DialogueSystem
     /// <summary>
     /// Class responsible for storing the data of a complete dialogue script
     /// </summary>
-    public class DialogueScript : ScriptableObject, IEnumerable<NodeData>
+    public class DialogueScript : ScriptableObject, IEnumerable<NodeData>, IEquatable<DialogueScript>
     {
         /// <summary>
         /// Name of the Dialogue
@@ -122,8 +122,11 @@ namespace DialogueSystem
         {
             return GetEnumerator();
         }
-    
-    
+
+        public bool Equals(DialogueScript other)
+        {
+            return dialogueID == other.dialogueID;
+        }
     }
 }
 

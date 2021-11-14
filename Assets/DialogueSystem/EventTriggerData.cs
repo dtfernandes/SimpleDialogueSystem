@@ -16,6 +16,10 @@ public class EventTriggerData
     public string UniqueID => uniqueID;
 
     [SerializeField]
+    private string savedID;
+    public string SavedID => savedID;
+    
+    [SerializeField]
     string functionName;
     public string FunctionName => functionName;
 
@@ -33,6 +37,8 @@ public class EventTriggerData
 
     public string ty => listOfType[seletedTypeIndex];
     public string ass => listOfAssemblies[seletedTypeIndex];
+
+  
 
 
     #region Editor Only

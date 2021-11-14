@@ -73,7 +73,7 @@ namespace DialogueSystem.Editor
             //Draw Event Trigger Data
             for (int i = 0; i < events.arraySize; i++)
             {
-
+                
                 #region Assign Serialized Properties
                 SerializedProperty gameObj =
                    events.GetArrayElementAtIndex(i).FindPropertyRelative("gameObj");
@@ -87,6 +87,8 @@ namespace DialogueSystem.Editor
                    events.GetArrayElementAtIndex(i).FindPropertyRelative("showSelf");
                 SerializedProperty uniqueID =
                    events.GetArrayElementAtIndex(i).FindPropertyRelative("uniqueID");
+                SerializedProperty savedID =
+                  events.GetArrayElementAtIndex(i).FindPropertyRelative("savedID");
                 SerializedProperty listOfType =
                    events.GetArrayElementAtIndex(i).FindPropertyRelative("listOfType");
                 SerializedProperty selectedComponent =
@@ -142,8 +144,19 @@ namespace DialogueSystem.Editor
                         if (oldObj != null)
                         {
                             //Compare the objects in the wating list
+                            if (uniqueID.stringValue == 
+                                savedID.stringValue)
+                            {
+                                //Object Changed from One In Used
+                                nodeInsp.SaveWaitingList.WaitListToDelete.Add(oldObj);
+                            }
+                            else
+                            {
+                                //Object Changed from one who is not In use
+                                nodeInsp.SaveWaitingList.WaitListToAdd.Remove(oldObj);
+                            }
                             //Remove The object equal to this one 
-                            nodeInsp.SaveWaitingList.WaitListToAdd.Remove(oldObj);
+                            //nodeInsp.SaveWaitingList.WaitListToAdd.Remove(oldObj);
                         }
 
                         //New Object Selected
@@ -171,9 +184,18 @@ namespace DialogueSystem.Editor
                             #endregion 
 
                             string id = DialogueEventManager.GetID(newGameObj);
-                            Debug.Log(id);
-                            nodeInsp.SaveWaitingList.WaitListToAdd.Add(newGameObj);
                             uniqueID.stringValue = id;
+                            savedID.stringValue = id;
+
+                            if (uniqueID.stringValue ==
+                                savedID.stringValue)
+                            {
+
+                            }
+
+
+                            nodeInsp.SaveWaitingList.WaitListToAdd.Add(newGameObj);
+                            
                             
                             //if (idNew)
                             //{
