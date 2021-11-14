@@ -23,8 +23,7 @@ namespace DialogueSystem.Editor
         }
 
         public override void OnInspectorGUI()
-        {
-
+        {           
             DialogueNodeInspector nodeInsp = target as DialogueNodeInspector;
 
             serializedObject.Update();
@@ -116,6 +115,14 @@ namespace DialogueSystem.Editor
                         DrawTriggerLabel(index.intValue, dialogueText.stringValue);
                     #endregion
 
+                    #region Selected Letter Index Trigger
+                    GUILayout.BeginHorizontal();
+                    GUILayout.Space(28);
+                    GUILayout.Label("Index");
+                    index.intValue = (int)EditorGUILayout.Slider(index.intValue, 0, dialogueText.stringValue.Length - 1);
+                    GUILayout.EndHorizontal();
+                    #endregion
+
                     #region GameObject Selection
                     GameObject gameObjTemp = gameObj.objectReferenceValue as GameObject;
                     EditorGUILayout.PropertyField(gameObj);
@@ -125,18 +132,18 @@ namespace DialogueSystem.Editor
                     {
 
                         GameObject newGameObj = gameObj?.objectReferenceValue as GameObject;
+                        GameObject oldObj = gameObjTemp;
 
-                        DialogueUniqueId idOld = gameObjTemp?.GetComponent<DialogueUniqueId>();
-                        DialogueUniqueId idNew =
-                            (newGameObj)?.GetComponent<DialogueUniqueId>();
+                        //DialogueUniqueId idOld = gameObjTemp?.GetComponent<DialogueUniqueId>();
+                        //DialogueUniqueId idNew =
+                        //    (newGameObj)?.GetComponent<DialogueUniqueId>();
 
                         //Deselect Old Object
-                        if (idOld)
+                        if (oldObj != null)
                         {
-                            if (idOld.TimesUsed == 1)
-                                DestroyImmediate(idOld);
-                            else
-                                idOld.TimesUsed--;
+                            //Compare the objects in the wating list
+                            //Remove The object equal to this one 
+                            nodeInsp.SaveWaitingList.WaitListToAdd.Remove(oldObj);
                         }
 
                         //New Object Selected
@@ -147,7 +154,7 @@ namespace DialogueSystem.Editor
                             List<System.Type> listType = new List<Type> { };
                             foreach (Component component in components)
                             {
-                                listType.Add(component.GetType());                                                            
+                                listType.Add(component.GetType());
                             }
 
                             listOfType.ClearArray();
@@ -163,18 +170,21 @@ namespace DialogueSystem.Editor
                             }
                             #endregion 
 
-                            if (idNew)
-                            {
-                                idNew.TimesUsed++;
-                                uniqueID.stringValue = idNew.UniqueID;
-                            }
-                            else
-                            {
-                                DialogueUniqueId newId = newGameObj.AddComponent<DialogueUniqueId>();
-                                newId.TimesUsed++;
-                                newId.UniqueID = Guid.NewGuid().ToString();
-                                uniqueID.stringValue = newId.UniqueID;
-                            }
+                            string id = DialogueEventManager.GetID(newGameObj);
+                            Debug.Log(id);
+                            nodeInsp.SaveWaitingList.WaitListToAdd.Add(newGameObj);
+                            uniqueID.stringValue = id;
+                            
+                            //if (idNew)
+                            //{
+                            //    uniqueID.stringValue = idNew.UniqueID;
+                            //}
+                            //else
+                            //{
+                            //    DialogueUniqueId newId = newGameObj.AddComponent<DialogueUniqueId>();
+                            //    newId.UniqueID = Guid.NewGuid().ToString();
+                            //    uniqueID.stringValue = newId.UniqueID;
+                            //}
                         }
                         else
                         {
@@ -193,7 +203,7 @@ namespace DialogueSystem.Editor
                         }
 
                         seletedTypeIndex.intValue =
-                        EditorGUILayout.Popup(new GUIContent("Object Components"), seletedTypeIndex.intValue, typeNameList);                      
+                        EditorGUILayout.Popup(new GUIContent("Object Components"), seletedTypeIndex.intValue, typeNameList);
                     }
                     #endregion
 
@@ -224,32 +234,17 @@ namespace DialogueSystem.Editor
 
                     EditorGUILayout.PropertyField(functionName);
 
-                    #region Selected Letter Index Trigger
-                    GUILayout.BeginHorizontal();
-                    GUILayout.Space(28);
-                    GUILayout.Label("Index");
-                    index.intValue = (int)EditorGUILayout.Slider(index.intValue, 0, dialogueText.stringValue.Length - 1);
-                    GUILayout.EndHorizontal();
-                    #endregion
 
                     GUILayout.Space(10);
 
-                 
+
                 }
+
                 GUILayout.Space(10);
             }
 
             EditorGUI.indentLevel = 1;
-
-            if (GUILayout.Button("Test Function"))
-            {
-                
-
-            }
-
             
-
-
             serializedObject.ApplyModifiedProperties();
         }
 

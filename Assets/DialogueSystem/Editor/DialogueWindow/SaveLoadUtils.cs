@@ -19,9 +19,9 @@ namespace DialogueSystem.Editor
         /// <param name="view">GraphView component that contains the
         /// Dialogue Nodes</param>
         /// <param name="dialogueName">Name of the passed Dialogue</param>
-        public void SaveDialogues(GraphView view, string dialogueName)
+        public DialogueScript SaveDialogues(GraphView view, string dialogueName)
         {
-            
+                       
             if (dialogueName == null)
                 dialogueName = "InitialName";
 
@@ -31,7 +31,7 @@ namespace DialogueSystem.Editor
                 "Please select file name to save dialogue to:",
                 "Assets/DialogueSystem/Dialogues");
 
-            if (string.IsNullOrEmpty(path)) return;
+            if (string.IsNullOrEmpty(path)) return null;
 
             DialogueScript temp = 
                 ScriptableObject.CreateInstance<DialogueScript>();
@@ -88,6 +88,8 @@ namespace DialogueSystem.Editor
 
             AssetDatabase.CreateAsset(temp, path);
             AssetDatabase.SaveAssets();
+
+            return temp;
         }
 
 

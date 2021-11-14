@@ -255,21 +255,26 @@ public class DialogueDisplayHandler : MonoBehaviour
             {                
                 if (data.IndexPos == index)
                 {
-                    DialogueUniqueId[] test = GameObject.FindObjectsOfType<DialogueUniqueId>();
-                    GameObject currentObject = null;
+
+                    GameObject obj = DialogueEventManager.GetGameObject(data.UniqueID);
+                    MonoBehaviour mono = obj.GetComponent(data.SelectedComponent) as MonoBehaviour;
+                    mono.Invoke(data.FunctionName, 0);
+
+                    //DialogueUniqueId[] test = GameObject.FindObjectsOfType<DialogueUniqueId>();
+                    //GameObject currentObject = null;
                   
-                    foreach(DialogueUniqueId d in test)
-                    {
-                        if(d.UniqueID == data.UniqueID)
-                        {
-                            currentObject = d.gameObject;
+                    //foreach(DialogueUniqueId d in test)
+                    //{
+                    //    if(d.UniqueID == data.UniqueID)
+                    //    {
+                    //        currentObject = d.gameObject;
                                                        
-                            MonoBehaviour obj = currentObject.GetComponent(data.SelectedComponent) as MonoBehaviour;
-                            obj.Invoke(data.FunctionName,0);
-                            break;
-                        }
+                    //        MonoBehaviour obj = currentObject.GetComponent(data.SelectedComponent) as MonoBehaviour;
+                    //        obj.Invoke(data.FunctionName,0);
+                    //        break;
+                    //    }
                         
-                    }
+                    //}
                 
                 }
             }

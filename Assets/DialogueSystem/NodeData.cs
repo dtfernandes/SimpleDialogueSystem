@@ -51,8 +51,6 @@ namespace DialogueSystem
         [SerializeField] [HideInInspector]
         private List<ChoiceData> outPorts = new List<ChoiceData>();
 
-
-
         /// <summary>
         /// Property that defines the unique id of this Node
         /// </summary>

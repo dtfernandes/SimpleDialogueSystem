@@ -99,26 +99,22 @@ namespace DialogueSystem.Editor
                 graphview.CreateDialogueNode();
             });
 
-            //Create button to instanciate a new node
-            Button nodeCreatePlayerButton = new Button(clickEvent: () =>
-            {
-                graphview.CreateDialogueNode();
-            });
-
             //Create button to save the Dialogue
             Button saveButton = new Button(clickEvent: () =>
             {
-                svUtil.SaveDialogues(graphview, graphview.DialogueName);
+                DialogueScript script = 
+                    svUtil.SaveDialogues(graphview, graphview.DialogueName);
+
+                if(script != null)
+                    graphview.SaveWatingList.Save(script);
             });
 
             //Add text to buttons
             nodeCreateButton.text = "Create Node";
-            nodeCreatePlayerButton.text = "Create Preset Node";
             saveButton.text = "Save Dialogue";
 
             //Add buttons to toolbar
             toolbar.Add(nodeCreateButton);
-            toolbar.Add(nodeCreatePlayerButton);
             toolbar.Add(saveButton);
 
             //Add toolbar to this graph

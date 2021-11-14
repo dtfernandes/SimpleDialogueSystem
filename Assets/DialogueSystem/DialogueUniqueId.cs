@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class DialogueUniqueId : MonoBehaviour
+namespace DialogueSystem
 {
-    [SerializeField]
-    private string uniqueID;
-    public string UniqueID { get => uniqueID; set => uniqueID = value; }
-    public int TimesUsed { get => timesUsed; set => timesUsed = value; }
+    public class DialogueUniqueId : MonoBehaviour
+    {
+        [SerializeField]
+        private string uniqueID;
+        public string UniqueID { get => uniqueID; set => uniqueID = value; }
+        public int TimesUsed => UsedIn.Count;
+        public List<DialogueScript> UsedIn { get => usedIn; set => usedIn = value; }
 
-    [SerializeField]
-    private int timesUsed;
+        [SerializeField]
+        private List<DialogueScript> usedIn;
 
+    }
 }

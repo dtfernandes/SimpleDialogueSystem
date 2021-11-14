@@ -20,8 +20,11 @@ namespace DialogueSystem.Editor
 
         //[SerializeField]
         private EntityInfo entityInfo;
-
+        
         private string presetEntityName;
+
+        private SavingWaitingList saveWaitingList;
+        public SavingWaitingList SaveWaitingList { get => saveWaitingList; set => saveWaitingList = value; }
 
         public void init(DialogueNode dn)
         {
@@ -30,6 +33,7 @@ namespace DialogueSystem.Editor
             dialogueText = dn.DialogText;
             events = node.Events;
             presetEntityName = dn.PresetName;
+            SaveWaitingList = dn.SaveWatingList;
 
             EntityData data = Resources.Load<EntityData>("EntityData");
             entityInfo = data[presetEntityName];

@@ -29,9 +29,15 @@ namespace DialogueSystem.Editor
         /// Property that defines if this node is connected to the Node "Start"
         /// </summary>
         public bool EntryPoint { get; set; }
-   
-        public DialogueNode(NodeData nd = null)
+       
+        private SavingWaitingList saveWatingList;
+        public SavingWaitingList SaveWatingList { get => saveWatingList; set => saveWatingList = value; }
+
+        public DialogueNode(SavingWaitingList savingWaitingList, NodeData nd = null)
         {
+
+            SaveWatingList = savingWaitingList;
+
             GUID = nd == null ? Guid.NewGuid().ToString() : nd.GUID;
             title = "Dialogue Node";
             DialogText = nd == null ? "" : nd.Dialogue;

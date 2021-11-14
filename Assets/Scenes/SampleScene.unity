@@ -222,6 +222,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DDisplay
       objectReference: {fileID: 0}
+    - target: {fileID: 2276409199851175250, guid: ed16c268f703c2745b093898ebbb1fb3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed16c268f703c2745b093898ebbb1fb3, type: 3}
 --- !u!224 &478019749 stripped
@@ -323,6 +327,8 @@ GameObject:
   - component: {fileID: 763841225}
   - component: {fileID: 763841224}
   - component: {fileID: 763841223}
+  - component: {fileID: 763841226}
+  - component: {fileID: 763841228}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -378,6 +384,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &763841226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763841222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7838a01a06ecac24bacbd7ff3363e8fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SerializationParList:
+  - id: 4a30ed88-b1b6-400d-a7fc-b129f69e9e47
+    gameObject: {fileID: 763841222}
+  TestList:
+  - id: 4a30ed88-b1b6-400d-a7fc-b129f69e9e47
+    gameObject: {fileID: 763841222}
+--- !u!114 &763841228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763841222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e4e862a2faad84cb8004404c8229ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1088364919
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,6 +426,7 @@ GameObject:
   - component: {fileID: 1088364922}
   - component: {fileID: 1088364921}
   - component: {fileID: 1088364920}
+  - component: {fileID: 1088364924}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -477,3 +514,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1088364924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088364919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0585b4b97ce8e554091b6462c64315c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueID: 81c9f267-949c-49a1-98c6-8ac64e06dc0e
+  usedIn: []

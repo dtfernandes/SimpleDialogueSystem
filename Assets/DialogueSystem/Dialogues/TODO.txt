@@ -1,0 +1,25 @@
+Formas de partir o event System...
+
+1 . Apagar o DialogueScript
+	Solução:
+		Ter uma lista dos DialogueScripts Associados a cada object. 
+		Atualizar a lista apagando os MissingFiles
+		Se tiver vazia apagar o GameObjectID
+
+2. Apagar o DialogueNode a seguir a por um Evento
+	Solução: 
+		Ter uma função que de catch do evento de Apagar o DialogueNode
+		Adicionar/Apagar todos os eventos da watingList
+
+3. Problemas em relação a Old vs New Events
+	Solução:
+		1.
+			Destinguir os dois de alguma forma. 
+		2.
+			Add to RemoveWaitingList 
+			quando for Old. Remove from AddWatingList se for new
+
+4. Redundancia no EventDialougeManager
+	Solução:
+		Apagar a parte do DialogueUniqueId e por toda as suas funcionalidades
+		na lista do EventDialogueManager

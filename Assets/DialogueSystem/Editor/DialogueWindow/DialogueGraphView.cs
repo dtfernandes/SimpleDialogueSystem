@@ -16,28 +16,25 @@ namespace DialogueSystem.Editor
         /// Property that defines the name of the dislayed Dialogue
         /// </summary>
         public string DialogueName { get; set; }
-
+        
         private DropdownMenuAction.Status hideStatus;
 
+      
+        private SavingWaitingList saveWatingList;
+        public SavingWaitingList SaveWatingList { get => saveWatingList; set => saveWatingList = value; }
 
+       
         /// <summary>
         /// Constructor of this class
         /// </summary>
         public DialogueGraphView()
         {
+            SaveWatingList = new SavingWaitingList();
+
             hideStatus = DropdownMenuAction.Status.Normal;
             SetupZoom(ContentZoomer.DefaultMinScale, 
                ContentZoomer.DefaultMaxScale);
-
-            //RegisterCallback<WheelEvent>((WheelEvent evt) => 
-            //{
-            //    Debug.Log(referenceScale);
-            //    nodes.ForEach( x =>
-            //    {
-                    
-            //    });
-            //});
-
+        
             this.AddManipulator(new ContentDragger());
             this.AddManipulator(new SelectionDragger());
             this.AddManipulator(new RectangleSelector());
@@ -119,7 +116,7 @@ namespace DialogueSystem.Editor
         /// <param name="nd">Data of the node to be created</param>
         public void CreateDialogueNode(NodeData nd = null)
         {
-            DialogueNode node = new DialogueNode(nd);
+            DialogueNode node = new DialogueNode(SaveWatingList, nd);
             AddElement(node);
             if(nd == null)
                 node.SetInInitialPosition(this); 
